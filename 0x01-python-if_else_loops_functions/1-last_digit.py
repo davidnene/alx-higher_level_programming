@@ -7,7 +7,11 @@ number = random.randint(-10000, 10000)
 # then we access last string,
 # afterwards we convert it to integer
 
-last = int(repr(number)[-1])
+if number < 0:
+    last = int(repr(number)[-1]) * -1
+else:
+    last = int(repr(number)[-1])
+
 if last > 5:
     print(f'Last digit of {number} is {last} and is greater than 5')
 elif last == 0:
